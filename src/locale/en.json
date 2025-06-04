@@ -1,0 +1,459 @@
+{
+  "Users": {
+    "title": "User Management",
+    "card": {
+      "title": "System Users",
+      "description": "Manage users who have access to the platform"
+    },
+    "actions": {
+      "add_user": "Add User",
+      "edit": "Edit",
+      "delete": "Delete",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "cancel": "Cancel",
+      "create": "Create",
+      "update": "Update"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "table": {
+      "caption": "List of users registered in the system",
+      "no_users": "No registered users",
+      "headers": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "delete_dialog": {
+      "title": "Delete User",
+      "description": "Are you sure you want to delete the user {name}?",
+      "warning": "This action cannot be undone. The user will be permanently deleted from the system."
+    },
+    "form": {
+      "create_title": "Create New User",
+      "edit_title": "Edit User",
+      "create_description": "Complete the form to create a new user in the system.",
+      "edit_description": "Modify the user information as needed.",
+      "email_edit_note": "The email cannot be modified once the user is created.",
+      "password_edit_note": "Leave blank to keep the current password.",
+      "isActive_description": "Active users can access the system, inactive users cannot log in.",
+      "fields": {
+        "name": "Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "password": "Password",
+        "password_optional": "Password (optional)",
+        "role": "Role",
+        "isActive": "Active user"
+      },
+      "placeholders": {
+        "name": "Enter name",
+        "lastName": "Enter last name",
+        "email": "Enter email",
+        "password": "Enter password"
+      }
+    },
+    "roles": {
+      "user": "User",
+      "admin": "Administrator",
+      "client": "Client",
+      "owner": "Owner",
+      "guest": "Guest"
+    },
+    "validation": {
+      "name_required": "Name is required",
+      "email_required": "Email is required",
+      "email_invalid": "Invalid email format",
+      "password_required": "Password is required",
+      "password_min_length": "Password must be at least 8 characters long",
+      "password_max_length": "Password cannot exceed 32 characters"
+    },
+    "toast": {
+      "error_title": "Error",
+      "success_title": "Success"
+    }
+  },
+  "Home": {
+    "title": "Welcome to Sicrux Teams",
+    "description": "The platform that transforms team management and time tracking into an efficient and productive process",
+    "cta_primary": "Get Started",
+    "cta_secondary": "See Features",
+    "features_title": "Key Features",
+    "features": {
+      "collaboration": {
+        "title": "Advanced Team Management",
+        "description": "Manage your teams and members from any device. Simple and efficient process."
+      },
+      "task_management": {
+        "title": "Time Tracking",
+        "description": "Monitor and manage your teams' worked hours with intuitive and powerful tools."
+      },
+      "secure_communication": {
+        "title": "Reports and Metrics",
+        "description": "Access detailed reports on your teams' performance and optimize resource allocation."
+      }
+    },
+    "cta_section": {
+      "title": "Ready to transform your team management?",
+      "description": "Join thousands of users already optimizing their team management and time tracking with Sicrux Teams",
+      "button": "Start for free"
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Log In",
+    "brand": "Sicrux Teams"
+  },
+  "Auth": {
+    "login": {
+      "title": "Sign in to your account",
+      "description": "Select your sign in method",
+      "select_method": "Select your sign in method",
+      "or_continue_with_email": "or continue with email",
+      "email": "Email address",
+      "enter_email": "Enter your email",
+      "password": "Password",
+      "enter_password": "Enter your password",
+      "remember_me": "Remember me",
+      "forgot_password": "Forgot your password?",
+      "sign_in": "Sign in",
+      "logging_in": "Signing in...",
+      "no_account": "Don't have an account?",
+      "register_here": "Register here",
+      "connect_title": "Connect with all applications",
+      "connect_description": "Everything you need in an easily customizable dashboard.",
+      "social": {
+        "google": "Google",
+        "facebook": "Facebook",
+        "microsoft": "Microsoft",
+        "github": "GitHub",
+        "comingSoon": "Coming Soon"
+      },
+      "error": {
+        "invalid_credentials": "Login error. Please verify your credentials.",
+        "general": "An error occurred during login. Please try again.",
+        "social": {
+          "google": "Error signing in with Google. Please try again.",
+          "facebook": "Error signing in with Facebook. Please try again.",
+          "microsoft": "Error signing in with Microsoft. Please try again.",
+          "github": "Error signing in with GitHub. Please try again."
+        }
+      },
+      "validation": {
+        "email_required": "Email is required",
+        "email_invalid": "Invalid email format",
+        "password_required": "Password is required",
+        "password_min_length": "Password must be at least 8 characters long",
+        "password_max_length": "Password cannot exceed 32 characters"
+      }
+    },
+    "register": {
+      "title": "Create your account",
+      "create_account": "Select a method to create your account",
+      "or_continue_with_email": "or continue with email",
+      "first_name": "First Name",
+      "enter_first_name": "Enter your first name",
+      "last_name": "Last Name",
+      "enter_last_name": "Enter your last name",
+      "email": "Email",
+      "enter_email": "Enter your email",
+      "password": "Password",
+      "enter_password": "Enter your password",
+      "confirm_password": "Confirm Password",
+      "enter_confirm_password": "Confirm your password",
+      "register": "Create Account",
+      "registering": "Creating account...",
+      "already_have_account": "Already have an account?",
+      "login_here": "Login here",
+      "welcome_title": "Welcome to Sicrux Teams",
+      "welcome_description": "You're one step away from transforming how you manage your teams.",
+      "error": {
+        "passwords_not_match": "Passwords do not match",
+        "general": "An error occurred during registration. Please try again."
+      },
+      "validation": {
+        "name_required": "First name is required",
+        "lastName_required": "Last name is required",
+        "email_required": "Email is required",
+        "email_invalid": "Invalid email format",
+        "password_required": "Password is required",
+        "password_min_length": "Password must be at least 8 characters long",
+        "password_max_length": "Password cannot exceed 32 characters",
+        "confirmPassword_required": "Password confirmation is required",
+        "confirmPassword_match": "Passwords do not match"
+      }
+    },
+    "validateAccount": {
+      "title": "Validate your account",
+      "description": "We've sent a 6-digit verification code to your email.",
+      "enter_code": "Enter verification code",
+      "enter_email": "Enter your email",
+      "validate_code": "Validate code",
+      "validating": "Validating...",
+      "resend_email": "Resend code",
+      "resending_email": "Resending code...",
+      "resend_success": "Code successfully resent. Please check your email.",
+      "back_to_login": "Back to login",
+      "resend_code": "Resend code",
+      "resending": "Resending...",
+      "error": {
+        "invalid_code": "Please enter a valid 6-digit code",
+        "invalid_email": "Please enter a valid email",
+        "general": "An error occurred while validating the code. Please try again."
+      },
+      "validation": {
+        "invalidEmail": "Invalid email format",
+        "codeLength": "Verification code must be 6 characters",
+        "codeOnlyDigits": "Verification code must contain only digits",
+        "codeAlphanumeric": "Verification code must contain only letters and numbers"
+      }
+    },
+    "logout": {
+      "title": "You have logged out",
+      "description": "Your session has been successfully ended. Thank you for using Sicrux Teams.",
+      "back_to_login": "Back to login"
+    },
+    "changePassword": {
+      "title": "Change Password",
+      "subtitle": "Enter the verification code and your new password",
+      "verificationCode": "Verification Code",
+      "newPassword": "New Password",
+      "enterNewPassword": "Enter your new password",
+      "confirmPassword": "Confirm Password",
+      "enterConfirmPassword": "Confirm your new password",
+      "resetPassword": "Change Password",
+      "changing": "Changing password...",
+      "success": "Your password has been successfully changed. You will be redirected to the login page.",
+      "backToLogin": "Back to login",
+      "error": {
+        "general": "An error occurred while changing the password. Please try again."
+      },
+      "validation": {
+        "password_required": "Password is required",
+        "password_min_length": "Password must be at least 8 characters long",
+        "password_max_length": "Password cannot exceed 32 characters",
+        "confirm_password_required": "Password confirmation is required",
+        "passwords_must_match": "Passwords do not match",
+        "code_required": "Verification code is required",
+        "code_length": "Verification code must be 6 characters",
+        "code_format": "Verification code must contain only letters and numbers"
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "description": "Enter your email address and we'll send you a verification code to reset your password.",
+      "email": "Email address",
+      "enter_email": "Enter your email",
+      "sendResetLink": "Send Reset Link",
+      "backToLogin": "Back to Login",
+      "generalError": "An error occurred. Please try again.",
+      "sending": "Sending...",
+      "validation": {
+        "email_required": "Email is required",
+        "email_invalid": "Invalid email format"
+      }
+    },
+    "sending": "Sending...",
+    "backToLogin": "Back to Login",
+    "emailSentTo": "We've sent a verification code to:",
+    "resetPassword": "Change Password",
+    "changePasswordDescription": "Enter the verification code and your new password.",
+    "verificationCode": "Verification Code",
+    "enterVerificationCode": "Enter the verification code",
+    "newPassword": "New Password",
+    "enterNewPassword": "Enter your new password",
+    "confirmPassword": "Confirm Password",
+    "confirmYourPassword": "Confirm your new password",
+    "changing": "Changing password...",
+    "passwordChangedSuccess": "Your password has been successfully changed. You will be redirected to the login page.",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "codeRequired": "Verification code is required",
+    "emailRequired": "Email is required",
+    "invalidCode": "Invalid verification code",
+    "generalError": "An error occurred. Please try again.",
+    "validation": {
+      "passwordLength": "Password must be at least 8 characters long",
+      "passwordsDoNotMatch": "Passwords do not match",
+      "invalidEmail": "Invalid email format",
+      "codeLength": "Verification code must be 6 characters",
+      "codeOnlyDigits": "Verification code must contain only digits",
+      "nameRequired": "Name is required",
+      "lastNameRequired": "Last name is required",
+      "codeAlphanumeric": "Verification code must contain only letters and numbers",
+      "forgotPassword": {
+        "email_required": "Email is required",
+        "email_invalid": "Invalid email format"
+      },
+      "changePassword": {
+        "password_required": "Password is required",
+        "password_min_length": "Password must be at least 8 characters long",
+        "password_max_length": "Password cannot exceed 32 characters",
+        "confirmPassword_required": "Password confirmation is required",
+        "confirmPassword_match": "Passwords do not match",
+        "code_required": "Verification code is required",
+        "code_length": "Verification code must be 6 characters",
+        "code_format": "Verification code must contain only letters and numbers"
+      },
+      "validateAccount": {
+        "email_required": "Email is required",
+        "email_invalid": "Invalid email format",
+        "code_required": "Verification code is required",
+        "code_length": "Verification code must be 6 characters",
+        "code_format": "Verification code must contain only letters and numbers"
+      }
+    }
+  },
+  "About": {
+    "title": "About Sicrux Teams",
+    "description": "Transforming team management and time tracking since 2024",
+    "mission": {
+      "title": "Our Mission",
+      "description": "Empowering users to manage teams efficiently through innovative tools"
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": {
+        "title": "Innovation",
+        "description": "We constantly seek new ways to improve team management"
+      },
+      "security": {
+        "title": "Security",
+        "description": "Your data and teams security is our top priority"
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We believe in the power of teamwork and effective communication"
+      }
+    },
+    "stats": {
+      "clients": "100+",
+      "clients_label": "Active Clients",
+      "users": "50k+",
+      "users_label": "Users",
+      "uptime": "99.9%",
+      "uptime_label": "Uptime",
+      "support": "24/7",
+      "support_label": "Support"
+    },
+    "team": {
+      "title": "Join Our Team",
+      "description": "We're always looking for talented people to join our team",
+      "cta": "See Open Positions"
+    }
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "description": "We're here to help",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "submitting": "Sending..."
+    },
+    "info": {
+      "email_title": "Email",
+      "phone_title": "Phone",
+      "address_title": "Address",
+      "email": "support@sicruxteams.com",
+      "phone": "+1 234 567 890",
+      "address": "City, Country"
+    },
+    "success": "Your message has been sent. We'll contact you soon.",
+    "error": "There was an error sending your message. Please try again."
+  },
+  "Footer": {
+    "description": "Transforming team management and time tracking into a smooth and productive experience",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "updates": "Updates"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "careers": "Careers",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "resources": {
+      "title": "Resources",
+      "documentation": "Documentation",
+      "help": "Help Center",
+      "guides": "Guides",
+      "api": "API"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "security": "Security",
+      "cookies": "Cookies"
+    },
+    "made_with": "Made with",
+    "by_team": "by Sicrux Teams team",
+    "rights_reserved": "All rights reserved.",
+    "brand": "Sicrux Teams"
+  },
+  "common": {
+    "AUTH": {
+      "MESSAGES": {
+        "EMAIL_NOT_FOUND": "The email is not registered in the system",
+        "INVALID_CREDENTIALS": "Incorrect credentials",
+        "INVALID_CODE": "The verification code is invalid",
+        "CODE_EXPIRED": "The verification code has expired",
+        "USER_ALREADY_EXISTS": "The user already exists in the system",
+        "GENERAL_ERROR": "An unexpected error has occurred",
+        "RECOVERY_CODE_SENT": "A recovery code has been sent to your email",
+        "ACCOUNT_ACTIVATED": "Your account has been activated successfully"
+      },
+      "ERRORS": {
+        "USER": {
+          "NOT_FOUND": "The user has not been found in the system",
+          "NOT_AUTHORIZED": "You are not authorized to perform this action"
+        },
+        "PASSWORD_NOT_STRONG": "The password is not strong enough. It must contain at least 8 characters, include uppercase, lowercase, numbers, and special characters."
+      }
+    },
+    "CODE": {
+      "ERRORS": {
+        "PROCESS": "An error occurred while processing the code",
+        "NOT_FOUND": "The code has not been found in the system",
+        "DELETED": "The code has been deleted or is not available",
+        "TOO_MANY_REQUESTS": "You have exceeded the limit of attempts. Please wait 10 minutes before trying again",
+        "INVALID_CODE": "The code entered is invalid",
+        "EXPIRED": "The code has expired",
+        "USED": "The code has already been used"
+      }
+    },
+    "USER": {
+      "ERRORS": {
+        "NOT_FOUND": "The user has not been found in the system"
+      },
+      "SUCCESS": {
+        "UPDATED": "The user has been updated successfully",
+        "DELETED": "The user has been deleted successfully",
+        "CREATED": "The user has been created successfully",
+        "ACTIVATED": "The user has been activated successfully",
+        "DEACTIVATED": "The user has been deactivated successfully"
+      }
+    },
+    "ERRORS": {
+      "NETWORK_ERROR": "Connection error. Please check your internet connection and try again.",
+      "UNEXPECTED_ERROR": "An unexpected error has occurred. Please try again later."
+    }
+  },
+  "brand": "Sicrux Teams"
+}

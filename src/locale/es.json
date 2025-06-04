@@ -1,0 +1,468 @@
+{
+  "Users": {
+    "title": "Gestión de Usuarios",
+    "card": {
+      "title": "Usuarios del Sistema",
+      "description": "Administra los usuarios que tienen acceso a la plataforma"
+    },
+    "actions": {
+      "add_user": "Agregar Usuario",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "activate": "Activar",
+      "deactivate": "Desactivar",
+      "cancel": "Cancelar",
+      "create": "Crear",
+      "update": "Actualizar"
+    },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "table": {
+      "caption": "Lista de usuarios registrados en el sistema",
+      "no_users": "No hay usuarios registrados",
+      "headers": {
+        "name": "Nombre",
+        "email": "Correo",
+        "role": "Rol",
+        "status": "Estado",
+        "actions": "Acciones"
+      }
+    },
+    "delete_dialog": {
+      "title": "Eliminar Usuario",
+      "description": "¿Estás seguro que deseas eliminar al usuario {name}?",
+      "warning": "Esta acción no se puede deshacer. El usuario será eliminado permanentemente del sistema."
+    },
+    "form": {
+      "create_title": "Crear Nuevo Usuario",
+      "edit_title": "Editar Usuario",
+      "create_description": "Complete el formulario para crear un nuevo usuario en el sistema.",
+      "edit_description": "Modifique la información del usuario según sea necesario.",
+      "email_edit_note": "El correo electrónico no se puede modificar una vez creado el usuario.",
+      "password_edit_note": "Deje en blanco para mantener la contraseña actual.",
+      "isActive_description": "Los usuarios activos pueden acceder al sistema, los inactivos no pueden iniciar sesión.",
+      "fields": {
+        "name": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "password_optional": "Contraseña (opcional)",
+        "role": "Rol",
+        "isActive": "Usuario activo"
+      },
+      "placeholders": {
+        "name": "Ingrese el nombre",
+        "lastName": "Ingrese el apellido",
+        "email": "Ingrese el correo electrónico",
+        "password": "Ingrese la contraseña"
+      }
+    },
+    "roles": {
+      "user": "Usuario",
+      "admin": "Administrador",
+      "client": "Cliente",
+      "guest": "Invitado"
+    },
+    "validation": {
+      "name_required": "El nombre es requerido",
+      "email_required": "El correo electrónico es requerido",
+      "email_invalid": "El formato del correo electrónico es inválido",
+      "password_required": "La contraseña es requerida",
+      "password_min_length": "La contraseña debe tener al menos 8 caracteres",
+      "password_max_length": "La contraseña no puede exceder los 32 caracteres"
+    },
+    "toast": {
+      "error_title": "Error",
+      "success_title": "Éxito"
+    }
+  },
+  "Home": {
+    "title": "Bienvenido a Sicrux Teams",
+    "description": "La plataforma que transforma la gestión de equipos y control de horas en un proceso eficiente y productivo",
+    "cta_primary": "Comenzar ahora",
+    "cta_secondary": "Ver características",
+    "features_title": "Características principales",
+    "features": {
+      "collaboration": {
+        "title": "Gestión de equipos avanzada",
+        "description": "Administra tus equipos y miembros desde cualquier dispositivo. Proceso simple y eficiente."
+      },
+      "task_management": {
+        "title": "Control de horas",
+        "description": "Monitorea y gestiona las horas trabajadas de tus equipos con herramientas intuitivas y potentes."
+      },
+      "secure_communication": {
+        "title": "Reportes y métricas",
+        "description": "Accede a informes detallados sobre el rendimiento de tus equipos y optimiza la asignación de recursos."
+      }
+    },
+    "cta_section": {
+      "title": "¿Listo para transformar la gestión de tus equipos?",
+      "description": "Únete a miles de usuarios que ya están optimizando la gestión de sus equipos y el control de horas con Sicrux Teams",
+      "button": "Comienza gratis"
+    }
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "features": "Características",
+    "pricing": "Precios",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "login": "Iniciar sesión",
+    "brand": "Sicrux Teams"
+  },
+  "Auth": {
+    "login": {
+      "title": "Inicia sesión en tu cuenta",
+      "description": "Selecciona el método para iniciar sesión",
+      "select_method": "Selecciona el método para iniciar sesión",
+      "or_continue_with_email": "o continúa con tu correo",
+      "email": "Correo electrónico",
+      "enter_email": "Ingresa tu correo electrónico",
+      "password": "Contraseña",
+      "enter_password": "Ingresa tu contraseña",
+      "remember_me": "Recordarme",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "sign_in": "Iniciar sesión",
+      "logging_in": "Iniciando sesión...",
+      "no_account": "¿No tienes una cuenta?",
+      "register_here": "Regístrate aquí",
+      "connect_title": "Conecta con todas las aplicaciones",
+      "connect_description": "Todo lo que necesitas en un panel de control fácilmente personalizable.",
+      "social": {
+        "google": "Google",
+        "facebook": "Facebook",
+        "microsoft": "Microsoft",
+        "github": "GitHub",
+        "comingSoon": "Próximamente"
+      },
+      "error": {
+        "invalid_credentials": "Error al iniciar sesión. Por favor verifica tus credenciales.",
+        "general": "Ocurrió un error durante el inicio de sesión. Por favor intenta de nuevo.",
+        "social": {
+          "google": "Error al iniciar sesión con Google. Por favor intenta de nuevo.",
+          "facebook": "Error al iniciar sesión con Facebook. Por favor intenta de nuevo.",
+          "microsoft": "Error al iniciar sesión con Microsoft. Por favor intenta de nuevo.",
+          "github": "Error al iniciar sesión con GitHub. Por favor intenta de nuevo."
+        }
+      },
+      "validation": {
+        "email_required": "El correo electrónico es requerido",
+        "email_invalid": "Formato de correo electrónico inválido",
+        "password_required": "La contraseña es requerida",
+        "password_min_length": "La contraseña debe tener al menos 8 caracteres",
+        "password_max_length": "La contraseña no puede exceder los 32 caracteres"
+      }
+    },
+    "register": {
+      "title": "Crea tu cuenta",
+      "create_account": "Selecciona el método para crear tu cuenta",
+      "or_continue_with_email": "o continúa con tu correo",
+      "first_name": "Nombre",
+      "enter_first_name": "Ingresa tu nombre",
+      "last_name": "Apellido",
+      "enter_last_name": "Ingresa tu apellido",
+      "email": "Correo electrónico",
+      "enter_email": "Ingresa tu correo electrónico",
+      "password": "Contraseña",
+      "enter_password": "Ingresa tu contraseña",
+      "confirm_password": "Confirmar contraseña",
+      "enter_confirm_password": "Confirma tu contraseña",
+      "register": "Crear cuenta",
+      "registering": "Creando cuenta...",
+      "already_have_account": "¿Ya tienes una cuenta?",
+      "login_here": "Inicia sesión aquí",
+      "welcome_title": "Bienvenido a Sicrux Teams",
+      "welcome_description": "Estás a un paso de transformar la gestión de tus equipos.",
+      "error": {
+        "passwords_not_match": "Las contraseñas no coinciden",
+        "general": "Ocurrió un error durante el registro. Por favor intenta de nuevo."
+      },
+      "validation": {
+        "name_required": "El nombre es requerido",
+        "lastName_required": "El apellido es requerido",
+        "email_required": "El correo electrónico es requerido",
+        "email_invalid": "Formato de correo electrónico inválido",
+        "password_required": "La contraseña es requerida",
+        "password_min_length": "La contraseña debe tener al menos 8 caracteres",
+        "password_max_length": "La contraseña no puede exceder los 32 caracteres",
+        "confirmPassword_required": "La confirmación de contraseña es requerida",
+        "confirmPassword_match": "Las contraseñas no coinciden"
+      }
+    },
+    "validateAccount": {
+      "title": "Valida tu cuenta",
+      "description": "Hemos enviado un código de verificación de 6 dígitos a tu correo electrónico.",
+      "enter_code": "Ingresa el código de verificación",
+      "enter_email": "Ingresa tu correo electrónico",
+      "validate_code": "Validar código",
+      "validating": "Validando...",
+      "resend_email": "Reenviar código",
+      "resending_email": "Reenviando código...",
+      "resend_success": "Código reenviado correctamente. Por favor revisa tu correo electrónico.",
+      "back_to_login": "Volver al inicio de sesión",
+      "resend_code": "Reenviar código",
+      "resending": "Reenviando...",
+      "error": {
+        "invalid_code": "Por favor ingresa un código válido de 6 dígitos",
+        "invalid_email": "Por favor ingresa un correo electrónico válido",
+        "general": "Ocurrió un error al validar el código. Por favor intenta de nuevo."
+      },
+      "validation": {
+        "email_required": "El correo electrónico es requerido",
+        "email_invalid": "Formato de correo electrónico inválido",
+        "code_required": "El código de verificación es requerido",
+        "code_length": "El código de verificación debe tener 6 caracteres",
+        "code_format": "El código de verificación debe contener solo letras y números"
+      }
+    },
+    "logout": {
+      "title": "Has cerrado sesión",
+      "description": "Tu sesión ha finalizado correctamente. Gracias por usar Sicrux Teams.",
+      "back_to_login": "Volver al inicio de sesión"
+    },
+    "changePassword": {
+      "title": "Cambiar Contraseña",
+      "subtitle": "Ingresa el código de verificación y tu nueva contraseña",
+      "verificationCode": "Código de Verificación",
+      "newPassword": "Nueva Contraseña",
+      "enterNewPassword": "Ingresa tu nueva contraseña",
+      "confirmPassword": "Confirmar Contraseña",
+      "enterConfirmPassword": "Confirma tu nueva contraseña",
+      "resetPassword": "Cambiar Contraseña",
+      "changing": "Cambiando contraseña...",
+      "success": "Tu contraseña ha sido cambiada exitosamente. Serás redirigido a la página de inicio de sesión.",
+      "backToLogin": "Volver al inicio de sesión",
+      "error": {
+        "general": "Ocurrió un error al cambiar la contraseña. Por favor intenta de nuevo."
+      },
+      "validation": {
+        "password_required": "La contraseña es requerida",
+        "password_min_length": "La contraseña debe tener al menos 8 caracteres",
+        "password_max_length": "La contraseña no puede exceder los 32 caracteres",
+        "confirmPassword_required": "La confirmación de contraseña es requerida",
+        "confirmPassword_match": "Las contraseñas no coinciden",
+        "code_required": "El código de verificación es requerido",
+        "code_length": "El código de verificación debe tener 6 caracteres",
+        "code_format": "El código de verificación debe contener solo letras y números"
+      }
+    },
+    "forgotPassword": {
+      "title": "Recuperar Contraseña",
+      "description": "Ingresa tu correo electrónico y te enviaremos un código de verificación para restablecer tu contraseña.",
+      "email": "Correo electrónico",
+      "enter_email": "Ingresa tu correo electrónico",
+      "sendResetLink": "Enviar Enlace",
+      "backToLogin": "Volver al Inicio de Sesión",
+      "generalError": "Ocurrió un error. Por favor intenta de nuevo.",
+      "sending": "Enviando...",
+      "validation": {
+        "email_required": "El correo electrónico es requerido",
+        "email_invalid": "Formato de correo electrónico inválido"
+      }
+    },
+    "sending": "Enviando...",
+    "emailSentTo": "Hemos enviado un código de verificación a:",
+    "resetPassword": "Cambiar Contraseña",
+    "changePasswordDescription": "Ingresa el código de verificación y tu nueva contraseña.",
+    "verificationCode": "Código de Verificación",
+    "enterVerificationCode": "Ingresa el código de verificación",
+    "newPassword": "Nueva Contraseña",
+    "enterNewPassword": "Ingresa tu nueva contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "confirmYourPassword": "Confirma tu nueva contraseña",
+    "changing": "Cambiando contraseña...",
+    "passwordChangedSuccess": "Tu contraseña ha sido cambiada exitosamente. Serás redirigido a la página de inicio de sesión.",
+    "passwordsDoNotMatch": "Las contraseñas no coinciden",
+    "codeRequired": "El código de verificación es requerido",
+    "emailRequired": "El correo electrónico es requerido",
+    "invalidCode": "Código de verificación inválido",
+    "generalError": "Ocurrió un error. Por favor intenta de nuevo.",
+    "validation": {
+      "passwordLength": "La contraseña debe tener al menos 8 caracteres",
+      "passwordsDoNotMatch": "Las contraseñas no coinciden",
+      "invalidEmail": "Formato de correo electrónico inválido",
+      "codeLength": "El código de verificación debe tener 6 caracteres",
+      "codeOnlyDigits": "El código de verificación debe contener solo dígitos",
+      "nameRequired": "El nombre es requerido",
+      "lastNameRequired": "El apellido es requerido",
+      "codeAlphanumeric": "El código de verificación debe contener solo letras y números",
+      "forgotPassword": {
+        "email_required": "El correo electrónico es requerido",
+        "email_invalid": "Formato de correo electrónico inválido"
+      },
+      "changePassword": {
+        "password_required": "La contraseña es requerida",
+        "password_min_length": "La contraseña debe tener al menos 8 caracteres",
+        "password_max_length": "La contraseña no puede exceder los 32 caracteres",
+        "confirmPassword_required": "La confirmación de contraseña es requerida",
+        "confirmPassword_match": "Las contraseñas no coinciden",
+        "code_required": "El código de verificación es requerido",
+        "code_length": "El código de verificación debe tener 6 caracteres",
+        "code_format": "El código de verificación debe contener solo letras y números"
+      },
+      "validateAccount": {
+        "email_required": "El correo electrónico es requerido",
+        "email_invalid": "Formato de correo electrónico inválido",
+        "code_required": "El código de verificación es requerido",
+        "code_length": "El código de verificación debe tener 6 caracteres",
+        "code_format": "El código de verificación debe contener solo letras y números"
+      }
+    }
+  },
+  "About": {
+    "title": "Sobre Sicrux Teams",
+    "description": "Transformando la gestión de equipos y control de horas desde 2024",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Empoderar a los usuarios para gestionar equipos de forma eficiente a través de herramientas innovadoras"
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "innovation": {
+        "title": "Innovación",
+        "description": "Constantemente buscamos nuevas formas de mejorar la gestión de equipos"
+      },
+      "security": {
+        "title": "Seguridad",
+        "description": "La seguridad de tus datos y equipos es nuestra principal prioridad"
+      },
+      "collaboration": {
+        "title": "Colaboración",
+        "description": "Creemos en el poder del trabajo en equipo y la comunicación efectiva"
+      }
+    },
+    "stats": {
+      "clients": "100+",
+      "clients_label": "Clientes Activos",
+      "users": "50k+",
+      "users_label": "Usuarios",
+      "uptime": "99.9%",
+      "uptime_label": "Uptime",
+      "support": "24/7",
+      "support_label": "Soporte"
+    },
+    "team": {
+      "title": "Únete a Nuestro Equipo",
+      "description": "Estamos siempre buscando personas talentosas para unirse a nuestro equipo",
+      "cta": "Ver Posiciones Abiertas"
+    }
+  },
+  "Contact": {
+    "title": "Contáctanos",
+    "description": "Estamos aquí para ayudarte",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando..."
+    },
+    "info": {
+      "email_title": "Correo Electrónico",
+      "phone_title": "Teléfono",
+      "address_title": "Dirección",
+      "email": "soporte@sicruxteams.com",
+      "phone": "+1 234 567 890",
+      "address": "Ciudad, País"
+    },
+    "success": "Tu mensaje ha sido enviado. Te contactaremos pronto.",
+    "error": "Hubo un error al enviar tu mensaje. Por favor intenta de nuevo."
+  },
+
+  "Footer": {
+    "description": "Transformando la gestión de equipos y control de horas en una experiencia fluida y productiva",
+    "product": {
+      "title": "Producto",
+      "features": "Características",
+      "pricing": "Precios",
+      "integrations": "Integraciones",
+      "updates": "Actualizaciones"
+    },
+    "company": {
+      "title": "Compañía",
+      "about": "Nosotros",
+      "careers": "Carreras",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "resources": {
+      "title": "Recursos",
+      "documentation": "Documentación",
+      "help": "Centro de Ayuda",
+      "guides": "Guías",
+      "api": "API"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "security": "Seguridad",
+      "cookies": "Cookies"
+    },
+    "made_with": "Hecho con",
+    "by_team": "por el equipo de Sicrux Teams",
+    "rights_reserved": "Todos los derechos reservados.",
+    "brand": "Sicrux Teams"
+  },
+  "common": {
+    "AUTH": {
+      "MESSAGES": {
+        "EMAIL_NOT_FOUND": "El correo electrónico no está registrado en el sistema",
+        "INVALID_CREDENTIALS": "Credenciales incorrectas",
+        "INVALID_CODE": "El código de verificación es inválido",
+        "CODE_EXPIRED": "El código de verificación ha expirado",
+        "USER_ALREADY_EXISTS": "El usuario ya existe en el sistema",
+        "GENERAL_ERROR": "Ha ocurrido un error inesperado",
+        "RECOVERY_CODE_SENT": "Se ha enviado un código de recuperación a tu correo electrónico",
+        "PASSWORD_RESET_SUCCESS": "Tu contraseña ha sido restablecida exitosamente",
+        "VERIFICATION_CODE_SENT": "Se ha enviado un código de verificación a tu correo electrónico",
+        "ACCOUNT_ACTIVATED": "Tu cuenta ha sido activada exitosamente"
+      },
+      "ERRORS": {
+        "USER": {
+          "NOT_FOUND": "El usuario no ha sido encontrado en el sistema",
+          "NOT_AUTHORIZED": "No tienes permisos para realizar esta acción"
+        },
+        "PASSWORD_NOT_STRONG": "La contraseña no es lo suficientemente segura. Debe contener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y caracteres especiales.",
+        "PASSWORD": {
+          "SAME_AS_OLD": "La nueva contraseña no puede ser la misma que la anterior"
+        },
+        "SIGNIN": {
+          "INVALID_CREDENTIALS": "Credenciales incorrectas",
+          "GENERAL_ERROR": "Ha ocurrido un error inesperado al iniciar sesión. Por favor, intenta nuevamente más tarde."
+        }
+      }
+    },
+    "CODE": {
+      "ERRORS": {
+        "PROCESS": "Ha ocurrido un error al procesar el código",
+        "NOT_FOUND": "El código no ha sido encontrado en el sistema",
+        "DELETED": "El código ha sido eliminado o no está disponible",
+        "TOO_MANY_REQUESTS": "Has excedido el límite de intentos. Por favor, espera 10 minutos antes de intentar nuevamente.",
+        "INVALID_CODE": "El código ingresado no es válido",
+        "EXPIRED": "El código ha expirado",
+        "USED": "El código ya ha sido utilizado"
+      }
+    },
+    "USER": {
+      "ERRORS": {
+        "NOT_FOUND": "El usuario no ha sido encontrado en el sistema"
+      },
+      "SUCCESS": {
+        "UPDATED": "El usuario ha sido actualizado exitosamente",
+        "DELETED": "El usuario ha sido eliminado exitosamente",
+        "CREATED": "El usuario ha sido creado exitosamente",
+        "ACTIVATED": "El usuario ha sido activado exitosamente",
+        "DEACTIVATED": "El usuario ha sido desactivado exitosamente"
+      }
+    },
+    "ERRORS": {
+      "NETWORK_ERROR": "Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.",
+      "UNEXPECTED_ERROR": "Ha ocurrido un error inesperado. Por favor, intenta nuevamente más tarde."
+    }
+  },
+  "brand": "Sicrux Teams"
+}

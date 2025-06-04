@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Shapes -->
+  <circle cx="700" cy="100" r="80" fill="url(#grad1)" />
+  <circle cx="100" cy="500" r="60" fill="url(#grad1)" />
+  
+  <!-- Main Illustration -->
+  <g transform="translate(200, 100)">
+    <!-- Dashboard Window -->
+    <rect x="0" y="0" width="400" height="300" rx="10" fill="#ffffff" opacity="0.9"/>
+    <rect x="20" y="20" width="360" height="40" rx="5" fill="#ffffff" opacity="0.5"/>
+    <circle cx="40" cy="40" r="6" fill="#ffffff"/>
+    <circle cx="60" cy="40" r="6" fill="#ffffff"/>
+    <circle cx="80" cy="40" r="6" fill="#ffffff"/>
+    
+    <!-- Content Lines -->
+    <rect x="40" y="80" width="320" height="10" rx="2" fill="#ffffff" opacity="0.7"/>
+    <rect x="40" y="100" width="280" height="10" rx="2" fill="#ffffff" opacity="0.5"/>
+    <rect x="40" y="120" width="300" height="10" rx="2" fill="#ffffff" opacity="0.6"/>
+    
+    <!-- Chart -->
+    <rect x="40" y="160" width="320" height="100" rx="5" fill="#ffffff" opacity="0.3"/>
+    <polyline points="60,240 140,180 220,220 300,160" 
+              stroke="#ffffff" 
+              stroke-width="3"
+              fill="none"/>
+              
+    <!-- Connection Lines -->
+    <g opacity="0.6">
+      <line x1="-50" y1="150" x2="450" y2="150" 
+            stroke="#ffffff" 
+            stroke-width="1"
+            stroke-dasharray="5,5"/>
+      <line x1="200" y1="-50" x2="200" y2="350" 
+            stroke="#ffffff" 
+            stroke-width="1"
+            stroke-dasharray="5,5"/>
+    </g>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g transform="translate(0, 0)" opacity="0.8">
+    <circle cx="600" cy="300" r="5" fill="#ffffff"/>
+    <circle cx="620" cy="320" r="3" fill="#ffffff"/>
+    <circle cx="580" cy="280" r="4" fill="#ffffff"/>
+    <circle cx="150" cy="150" r="4" fill="#ffffff"/>
+    <circle cx="170" cy="170" r="3" fill="#ffffff"/>
+    <circle cx="130" cy="130" r="5" fill="#ffffff"/>
+  </g>
+</svg> 
