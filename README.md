@@ -41,8 +41,15 @@ yarn install
 ```
 
 3. Set up environment variables
-- Copy `.env.example` to `.env.local`
-- Fill in the required configuration
+```bash
+cp .env.example .env.local
+```
+- In the [Firebase Console](https://console.firebase.google.com/), open **Project settings > General > Your apps** and select your web app (register one if needed).
+- Copy the values from **SDK setup and configuration > Config** into the matching `NEXT_PUBLIC_FIREBASE_*` variables in `.env.local`. `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID` is optional.
+- Use the web app configuration, not a service account private key. Never put private credentials in `NEXT_PUBLIC_*` variables: they are included in the browser bundle.
+- Restart the development server after changing `.env.local`. For production, configure these variables before running the build.
+
+If startup fails with `Firebase: Error (auth/invalid-api-key)`, first check that `.env.local` exists in the project root and that `NEXT_PUBLIC_FIREBASE_API_KEY` contains your Firebase web app's `apiKey`, then restart the server. If it persists, verify that the key still exists in the same Google Cloud project and that its API/application restrictions allow the intended Firebase usage.
 
 ### Running the Project
 
