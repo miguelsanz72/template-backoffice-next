@@ -2,6 +2,8 @@ import { create, StateCreator } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { AuthStore } from './auth.types';
 import { AuthRepositoryImpl } from '../../infrastructure/repositories/auth.repository.impl';
+import { isMockAuthEnabled, MockAuthRepository } from '../../infrastructure/repositories/mock.auth.repository';
+import { AuthRepository } from '../../domain';
 import { ApiRestDataSource } from '../../infrastructure/datasources/api.rest.datasource';
 import { FirebaseAuthDataSource } from '../../infrastructure/datasources/firebase.auth.datasource';
 import { IUser, IUserLogin, IUserRegister, IForgotPassword, IChangePassword, IValidateAccount } from '../../domain/interfaces';
@@ -14,7 +16,7 @@ const apiRestDataSource = new ApiRestDataSource();
 const firebaseAuthDataSource = new FirebaseAuthDataSource();
 
 // Crear una instancia del repositorio
-const authRepository = new AuthRepositoryImpl(apiRestDataSource);
+const authRepository: AuthRepository = isMockAuthEnabled ? new MockAuthRepository() : new AuthRepositoryImpl(apiRestDataSource);
 
 const cookieStorage = {
   getItem: (name: string): string | null => {
