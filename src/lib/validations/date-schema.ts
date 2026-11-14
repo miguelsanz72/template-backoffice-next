@@ -17,7 +17,7 @@ export const createDateSchema = (
   messages?: DateValidationMessages
 ) => {
   let schema = z.date({
-    required_error: messages?.required || "La fecha es requerida",
+    error: (issue) => (issue.input === undefined ? messages?.required || "La fecha es requerida" : undefined),
   });
 
   if (options.minDate) {

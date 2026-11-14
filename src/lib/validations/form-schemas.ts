@@ -11,7 +11,7 @@ export const usernameSchema = z
   });
 
 export const genderSchema = z.enum(["male", "female"], {
-  errorMap: () => ({ message: "Gender is required" }),
+  error: () => "Gender is required",
 });
 
 export const dateSchema = z.date();

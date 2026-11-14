@@ -60,7 +60,7 @@ export function DateField({
                   (validationOptions.minDate ? date < validationOptions.minDate : false) ||
                   (validationOptions.maxDate ? date > validationOptions.maxDate : false)
                 }
-                initialFocus
+                autoFocus
               />
             </PopoverContent>
           </Popover>

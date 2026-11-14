@@ -1,14 +1,10 @@
 import { IResponseMessage } from '@/core';
 import { AuthRepository } from '../../domain';
 import {
-  IChangePassword,
-  IForgotPassword,
   ILoginResponse,
   ISocialLoginRequest,
   IUser,
   IUserLogin,
-  IUserRegister,
-  IValidateAccount,
 } from '../../domain/interfaces';
 
 // Development-only repository: accepts any credentials and never calls the API.
@@ -62,23 +58,23 @@ export class MockAuthRepository implements AuthRepository {
     return buildMockLoginResponse(email);
   }
 
-  register(_user: IUserRegister) {
+  register() {
     return ok('Mock: registro simulado');
   }
 
-  forgotPassword(_data: IForgotPassword) {
+  forgotPassword() {
     return ok('Mock: correo de recuperación simulado');
   }
 
-  resetPassword(_data: IChangePassword) {
+  resetPassword() {
     return ok('Mock: contraseña actualizada');
   }
 
-  resendActivationCode(_email: string) {
+  resendActivationCode() {
     return ok('Mock: código reenviado');
   }
 
-  validateAccount(_data: IValidateAccount) {
+  validateAccount() {
     return ok('Mock: cuenta validada');
   }
 }

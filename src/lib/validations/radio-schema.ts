@@ -14,8 +14,6 @@ export const createRadioSchema = (options: RadioOption[], messages?: RadioValida
   const values = options.map((option) => option.value);
 
   return z.enum(values as [string, ...string[]], {
-    errorMap: () => ({
-      message: messages?.required || 'Este campo es requerido',
-    }),
+    error: () => messages?.required || 'Este campo es requerido',
   });
 };

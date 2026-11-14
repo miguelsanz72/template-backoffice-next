@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
+import { z } from 'zod';
 import { userFormSchema, UserFormValues } from '../../domain/validations/user-schema';
 import { IUser, IUserCreate, IUserUpdate } from '../../domain/interfaces';
 import { useUsersStore } from '../store';
@@ -74,7 +75,7 @@ export function UserFormSheet({ user, isOpen, onClose }: UserFormSheetProps) {
         },
   });
 
-  const form = useForm<UserFormValues>({
+  const form = useForm<z.input<typeof validationSchema>, unknown, UserFormValues>({
     resolver: zodResolver(validationSchema),
     defaultValues: {
       name: '',

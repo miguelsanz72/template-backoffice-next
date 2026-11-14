@@ -6,7 +6,6 @@ const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
@@ -16,10 +15,6 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  // Deshabilitamos la configuración de webpack para SVG ya que usaremos next/image
-  webpack(config) {
-    return config;
   },
 };
 

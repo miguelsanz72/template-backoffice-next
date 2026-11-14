@@ -32,6 +32,8 @@ const ROUTES = {
     `/(${locales.join('|')})?/auth/reset-password`,
     `/(${locales.join('|')})?/auth/change-password`,
   ],
+  // Locale prefix is optional as a whole, so both /auth/logout and /es/auth/logout match
+  LOGOUT: [`(/(${locales.join('|')}))?/auth/logout`],
   // Protected routes that require authentication - using a pattern for all dashboard routes
   PROTECTED: [`/(${locales.join('|')})?/dashboard`],
   // Routes that should redirect authenticated users (e.g., login page)
@@ -70,7 +72,8 @@ function synchronizeToken(response: NextResponse, tokenFromStorage: string | nul
   if (tokenFromStorage && !tokenFromCookie) {
     response.cookies.set('auth_token', tokenFromStorage, {
       path: '/',
-      httpOnly: true,
+      // Not httpOnly: the client auth store reads and removes this cookie with js-cookie
+      httpOnly: false,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
     });
@@ -103,11 +106,11 @@ function isProtectedRoute(path: string): boolean {
 }
 
 /**
- * Middleware to handle authentication and internationalization
+ * Proxy to handle authentication and internationalization
  * @param request - NextRequest object
  * @returns NextResponse object
  */
-export async function middleware(request: NextRequest): Promise<NextResponse> {
+export async function proxy(request: NextRequest): Promise<NextResponse> {
   const path = request.nextUrl.pathname;
 
   // Extract authentication tokens
@@ -136,6 +139,13 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
   if (intlResponse) {
     // Update response with locale settings
     const responseWithLocale = handleLocaleSettings(intlResponse, localeCookie);
+
+    // Clear session cookies server-side so httpOnly cookies set by older versions are removed too
+    if (matchesRoutePattern(path, ROUTES.LOGOUT)) {
+      responseWithLocale.cookies.delete('auth_token');
+      responseWithLocale.cookies.delete('auth-storage');
+      return responseWithLocale;
+    }
 
     // Synchronize token between storage and cookie
     const finalResponse = synchronizeToken(responseWithLocale, tokenFromStorage, tokenFromCookie);

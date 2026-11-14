@@ -8,7 +8,7 @@ export interface EmailValidationMessages {
 export const createEmailSchema = (messages?: EmailValidationMessages) => {
   return z
     .string({
-      required_error: messages?.required || "El email es requerido",
+      error: (issue) => (issue.input === undefined ? messages?.required || "El email es requerido" : undefined),
     })
     .email({
       message: messages?.invalid || "Dirección de correo electrónico inválida",

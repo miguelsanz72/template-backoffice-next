@@ -57,7 +57,7 @@ const cookieStorage = {
   },
 };
 
-const createAuthStore: StateCreator<AuthStore, [['zustand/devtools', never]], []> = (set) => ({
+const createAuthStore: StateCreator<AuthStore, [['zustand/devtools', never], ['zustand/persist', unknown]], []> = (set) => ({
   status: 'checking',
   token: null,
   user: null,

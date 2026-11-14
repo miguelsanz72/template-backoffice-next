@@ -1,5 +1,6 @@
 import { IUser, IUserCreate, IUserResponse, IUserUpdate } from '../../domain/interfaces';
 import { UserCreateDto, UserDto, UserResponseDto, UserUpdateDto } from '../dtos';
+import { EUserRole } from '../../domain/enums';
 
 /**
  * UserMapper
@@ -20,7 +21,7 @@ export class UserMapper {
       isActive: userDto.is_active,
       emailVerified: true,
       organization: null,
-      userRoles: userDto.roles,
+      userRoles: userDto.roles as EUserRole[],
       avatar: userDto.avatar,
     };
   }

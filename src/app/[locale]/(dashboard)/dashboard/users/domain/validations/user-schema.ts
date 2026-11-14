@@ -27,12 +27,12 @@ interface ValidationMessages {
 export const userFormSchema = (messages: ValidationMessages = {}) => {
   return z.object({
     name: z.string({
-      required_error: messages.name?.required || 'Name is required',
+      error: (issue) => (issue.input === undefined ? messages.name?.required || 'Name is required' : undefined),
     }),
     lastName: z.string().optional(),
     email: z
       .string({
-        required_error: messages.email?.required || 'Email is required',
+        error: (issue) => (issue.input === undefined ? messages.email?.required || 'Email is required' : undefined),
       })
       .email(messages.email?.invalid || 'Invalid email format'),
     password: z
