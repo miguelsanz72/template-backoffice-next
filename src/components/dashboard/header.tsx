@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 import { Search, Bell, User, Settings, LogOut, MenuIcon, PanelLeft, PanelRight } from 'lucide-react';
 import { useAuthStore } from '@/app/[locale]/auth/(presentation)/store/auth.store';
-import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -35,20 +34,10 @@ export const DashboardHeader: React.FC = () => {
     }
   };
 
-  const logout = async () => {
-    // Primero limpiamos el estado en Zustand
+  const logout = () => {
     useAuthStore.getState().logout();
-
-    try {
-      // Luego cerramos la sesión en next-auth y redirigimos
-      await signOut({ redirect: false });
-
-      // Finalmente, redirigimos manualmente a la página de logout
-      router.push('/auth/logout');
-    } catch (error) {
-      console.error('Error al cerrar sesión:', error);
-      router.push('/auth/logout');
-    }
+    // The logout route also clears the session cookies on the server (see src/proxy.ts)
+    router.push('/auth/logout');
   };
 
   // Obtener las iniciales del usuario para el avatar

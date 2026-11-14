@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { images } from '@/core/constants/images';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
+import { useIsClient } from '@/core/hooks/use-is-client';
 
 export type LogoVariant = 'default' | 'light' | 'dark' | 'auto';
 
@@ -124,8 +125,7 @@ export const Logo: React.FC<LogoProps> = ({
     return withText ? images.logoText : images.logo;
   };
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
+  const mounted = useIsClient();
 
   const src = (!mounted && variant === 'auto')
     ? (withText ? images.logoText : images.logo)

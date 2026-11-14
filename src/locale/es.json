@@ -104,6 +104,25 @@
       "button": "Comienza gratis"
     }
   },
+  "Features": {
+    "title": "Características de Sicrux Teams",
+    "description": "Todo lo que necesitas para gestionar tus equipos y controlar las horas trabajadas en un solo lugar",
+    "cards_title": "Diseñado para equipos productivos",
+    "cards": {
+      "advanced_signature": {
+        "title": "Acceso desde cualquier dispositivo",
+        "description": "Gestiona equipos, miembros y registros de horas desde el escritorio o el móvil."
+      },
+      "document_management": {
+        "title": "Gestión centralizada",
+        "description": "Organiza proyectos, equipos y documentación en un panel único y fácil de usar."
+      },
+      "certified_security": {
+        "title": "Seguridad y control de acceso",
+        "description": "Roles y permisos para que cada usuario vea solo lo que necesita."
+      }
+    }
+  },
   "Navigation": {
     "home": "Inicio",
     "features": "Características",
@@ -371,7 +390,6 @@
     "success": "Tu mensaje ha sido enviado. Te contactaremos pronto.",
     "error": "Hubo un error al enviar tu mensaje. Por favor intenta de nuevo."
   },
-
   "Footer": {
     "description": "Transformando la gestión de equipos y control de horas en una experiencia fluida y productiva",
     "product": {

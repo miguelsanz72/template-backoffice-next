@@ -23,7 +23,6 @@ export default function LoginPage() {
   const login = useAuthStore((state) => state.login);
   const loginWithGoogle = useAuthStore((state) => state.loginWithGoogle);
   const status = useAuthStore((state) => state.status);
-  const errorMessage = useAuthStore((state) => state.errorMessage);
 
   const router = useRouter();
   const t = useTranslations('Auth.login');
@@ -53,11 +52,8 @@ export default function LoginPage() {
   useEffect(() => {
     if (status === 'authenticated') {
       router.push('/dashboard');
-    } else if (status === 'not-authenticated' && errorMessage) {
-      setError(errorMessage);
-      setIsLoading(false);
     }
-  }, [status, errorMessage, router]);
+  }, [status, router]);
 
   const onSubmit = async (data: LoginFormValues) => {
     setError('');
@@ -66,7 +62,7 @@ export default function LoginPage() {
     try {
       await login(data.email, data.password);
     } catch (err) {
-      setError(errorMessage || t('error.general'));
+      setError(err instanceof Error && err.message ? err.message : t('error.general'));
       console.error('Login error:', err);
       setIsLoading(false);
     }
@@ -96,7 +92,7 @@ export default function LoginPage() {
                   setError('');
                   await loginWithGoogle();
                 } catch (err) {
-                  setError(errorMessage || t('error.social.google'));
+                  setError(err instanceof Error && err.message ? err.message : t('error.social.google'));
                   console.error('Google login error:', err);
                   setIsLoading(false);
                 }
@@ -132,7 +128,7 @@ export default function LoginPage() {
           )}
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form noValidate onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <EmailField name="email" label={t('email')} placeholder={t('enter_email')} />
 
               <TextField name="password" label={t('password')} placeholder={t('enter_password')} type="password" />

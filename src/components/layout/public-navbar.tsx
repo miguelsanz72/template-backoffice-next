@@ -1,85 +1,28 @@
 'use client';
 
-import { Link } from '@/i18n/request';
-import React, { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { usePathname } from '@/i18n/request';
-import { locales, defaultLocale } from '@/i18n/config';
+import { Link, usePathname, useRouter } from '@/i18n/request';
+import React, { useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import { locales, type Locale } from '@/i18n/config';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
-
-type Locale = 'es' | 'en';
 
 export function PublicNavbar() {
   const t = useTranslations('Navigation');
   const pathname = usePathname();
+  const router = useRouter();
+  const selectedLanguage = useLocale() as Locale;
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<Locale>(defaultLocale as Locale);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const pathLocale = pathname.split('/')[1];
-
-    if (locales.includes(pathLocale as Locale)) {
-      setSelectedLanguage(pathLocale as Locale);
-      localStorage.setItem('language', pathLocale as Locale);
-    } else {
-      const storedLanguage = localStorage.getItem('language');
-      if (storedLanguage && locales.includes(storedLanguage as Locale)) {
-        setSelectedLanguage(storedLanguage as Locale);
-      }
-    }
-  }, [pathname]);
 
   const handleLanguageChange = (locale: Locale) => {
-    setSelectedLanguage(locale);
-    localStorage.setItem('language', locale);
-
-    // Set next-intl cookie
-    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; SameSite=Lax`;
-
-    // Get current path segments
-    const pathSegments = pathname.split('/').filter(Boolean);
-
-    // Remove current locale if it exists
-    if (locales.includes(pathSegments[0] as Locale)) {
-      pathSegments.shift();
-    }
-
-    // Build new path
-    const finalPath =
-      locale === defaultLocale
-        ? pathSegments.length
-          ? `/${pathSegments.join('/')}`
-          : '/'
-        : `/${locale}${pathSegments.length ? '/' + pathSegments.join('/') : ''}`;
-
     setIsLanguageDropdownOpen(false);
-
-    // Use Next.js router for client-side navigation
-    window.location.href = finalPath;
+    // next-intl navigation keeps the current path and updates the NEXT_LOCALE cookie
+    router.replace(pathname, { locale });
   };
 
   const languageNames = {
     es: 'Español',
     en: 'English',
   };
-
-  // Only render language-specific content after client-side hydration
-  if (!mounted) {
-    return (
-      <nav className="bg-white dark:bg-gray-900 shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-primary dark:text-primary-light">
-            {t('brand')}
-          </Link>
-          <div className="flex space-x-6 items-center">
-            <div className="w-24 h-8 bg-gray-200 dark:bg-gray-700 animate-pulse rounded"></div>
-          </div>
-        </div>
-      </nav>
-    );
-  }
 
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md">

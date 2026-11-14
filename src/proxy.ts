@@ -15,29 +15,31 @@ const intlMiddleware = createMiddleware({
 /**
  * Route configuration for different access types
  */
+// The whole "/<locale>" segment is optional, so both /auth/login and /en/auth/login match
+const LOCALE_PREFIX = `(/(${locales.join('|')}))?`;
+
 const ROUTES = {
   // Public routes that don't require authentication
   PUBLIC: [
     `/(${locales.join('|')})?`,
-    `/(${locales.join('|')})?/features`,
-    `/(${locales.join('|')})?/pricing`,
-    `/(${locales.join('|')})?/about`,
-    `/(${locales.join('|')})?/contact`,
+    `${LOCALE_PREFIX}/features`,
+    `${LOCALE_PREFIX}/pricing`,
+    `${LOCALE_PREFIX}/about`,
+    `${LOCALE_PREFIX}/contact`,
   ],
   // Authentication related routes
   AUTH: [
-    `/(${locales.join('|')})?/auth/login`,
-    `/(${locales.join('|')})?/auth/register`,
-    `/(${locales.join('|')})?/auth/forgot-password`,
-    `/(${locales.join('|')})?/auth/reset-password`,
-    `/(${locales.join('|')})?/auth/change-password`,
+    `${LOCALE_PREFIX}/auth/login`,
+    `${LOCALE_PREFIX}/auth/register`,
+    `${LOCALE_PREFIX}/auth/forgot-password`,
+    `${LOCALE_PREFIX}/auth/reset-password`,
+    `${LOCALE_PREFIX}/auth/change-password`,
   ],
-  // Locale prefix is optional as a whole, so both /auth/logout and /es/auth/logout match
-  LOGOUT: [`(/(${locales.join('|')}))?/auth/logout`],
+  LOGOUT: [`${LOCALE_PREFIX}/auth/logout`],
   // Protected routes that require authentication - using a pattern for all dashboard routes
-  PROTECTED: [`/(${locales.join('|')})?/dashboard`],
+  PROTECTED: [`${LOCALE_PREFIX}/dashboard`],
   // Routes that should redirect authenticated users (e.g., login page)
-  REDIRECT_IF_AUTHENTICATED: [`/(${locales.join('|')})?/auth/login`, `/(${locales.join('|')})?/auth/register`],
+  REDIRECT_IF_AUTHENTICATED: [`${LOCALE_PREFIX}/auth/login`, `${LOCALE_PREFIX}/auth/register`],
 };
 
 /**

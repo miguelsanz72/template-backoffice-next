@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useAuthStore } from '@/app/[locale]/auth/(presentation)/store/auth.store';
 import { SidebarProvider } from '@/components/ui/sidebar';
@@ -17,13 +17,19 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const authStatus = useAuthStore((state) => state.status);
   const router = useRouter();
 
+  // Navigate from an effect: calling router.push during render triggers a React setState-in-render error
+  useEffect(() => {
+    if (authStatus === 'not-authenticated') {
+      router.replace('/auth/login');
+    }
+  }, [authStatus, router]);
+
   if (authStatus === 'checking') {
     //TODO: Implementar un loader/spinner
     return <div>Cargando...</div>;
   }
 
   if (authStatus === 'not-authenticated') {
-    router.push('/auth/login');
     return null;
   }
 

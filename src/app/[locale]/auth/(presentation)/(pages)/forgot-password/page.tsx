@@ -1,7 +1,7 @@
 'use client';
 
 import { useAuthStore } from '@/app/[locale]/auth/(presentation)/store/auth.store';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from '@/i18n/request';
 import { Link } from '@/i18n/request';
 import React from 'react';
@@ -24,9 +24,6 @@ export default function ForgotPasswordPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   const forgotPassword = useAuthStore((state) => state.forgotPassword);
-  const status = useAuthStore((state) => state.status);
-  const errorMessage = useAuthStore((state) => state.errorMessage);
-  const successMessage = useAuthStore((state) => state.successMessage);
 
   const router = useRouter();
   const t = useTranslations('Auth.forgotPassword');
@@ -60,30 +57,15 @@ export default function ForgotPasswordPage() {
     return message;
   };
 
-  useEffect(() => {
-    if (status === 'not-authenticated' && errorMessage) {
-      setError(translateApiMessage(errorMessage));
-      setIsLoading(false);
-    }
-
-    if (status === 'not-authenticated' && successMessage) {
-      // Redirigir a la página de cambio de contraseña y pasar el email como query parameter
-      const email = form.getValues('email');
-      if (email) {
-        router.push(`/auth/change-password?email=${encodeURIComponent(email)}`);
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status, errorMessage, successMessage, router, form]);
-
   const handleSubmit = async (values: ForgotPasswordFormValues) => {
     setError('');
     setIsLoading(true);
 
     try {
       await forgotPassword(values.email);
+      router.push(`/auth/change-password?email=${encodeURIComponent(values.email)}`);
     } catch (err) {
-      const errorMsg = errorMessage || t('generalError');
+      const errorMsg = err instanceof Error && err.message ? err.message : t('generalError');
       setError(translateApiMessage(errorMsg));
       console.error('Forgot password error:', err);
       setIsLoading(false);
@@ -111,7 +93,7 @@ export default function ForgotPasswordPage() {
           )}
 
           <Form {...form}>
-            <form className="space-y-6" onSubmit={form.handleSubmit(handleSubmit)}>
+            <form noValidate className="space-y-6" onSubmit={form.handleSubmit(handleSubmit)}>
               <EmailField name="email" label={t('email')} placeholder={t('email')} required />
 
               <Button type="submit" disabled={isLoading} className={`w-full text-white`}>

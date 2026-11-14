@@ -23,7 +23,6 @@ export default function RegisterPage() {
 
   const register = useAuthStore((state) => state.register);
   const status = useAuthStore((state) => state.status);
-  const errorMessage = useAuthStore((state) => state.errorMessage);
 
   const router = useRouter();
   const t = useTranslations('Auth.register');
@@ -65,11 +64,8 @@ export default function RegisterPage() {
   useEffect(() => {
     if (status === 'authenticated') {
       router.push('/dashboard');
-    } else if (status === 'not-authenticated' && errorMessage) {
-      setError(errorMessage);
-      setIsLoading(false);
     }
-  }, [status, errorMessage, router]);
+  }, [status, router]);
 
   const handleSubmit = async (values: RegisterFormValues) => {
     setError('');
@@ -86,7 +82,7 @@ export default function RegisterPage() {
       // After successful registration, redirect to validate account with email parameter
       router.push(`/auth/validate-account?email=${encodeURIComponent(values.email)}`);
     } catch (err) {
-      setError(errorMessage || t('error.general'));
+      setError(err instanceof Error && err.message ? err.message : t('error.general'));
       console.error('Registration error:', err);
       setIsLoading(false);
     }
@@ -134,7 +130,7 @@ export default function RegisterPage() {
           )}
 
           <Form {...form}>
-            <form className="space-y-6" onSubmit={form.handleSubmit(handleSubmit)}>
+            <form noValidate className="space-y-6" onSubmit={form.handleSubmit(handleSubmit)}>
               <div className="grid grid-cols-2 gap-4">
                 <TextField name="name" label={t('first_name')} placeholder={t('enter_first_name')} required />
                 <TextField name="lastName" label={t('last_name')} placeholder={t('enter_last_name')} required />

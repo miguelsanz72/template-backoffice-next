@@ -105,6 +105,25 @@
       "button": "Start for free"
     }
   },
+  "Features": {
+    "title": "Sicrux Teams features",
+    "description": "Everything you need to manage your teams and track worked hours in one place",
+    "cards_title": "Built for productive teams",
+    "cards": {
+      "advanced_signature": {
+        "title": "Access from any device",
+        "description": "Manage teams, members and time entries from desktop or mobile."
+      },
+      "document_management": {
+        "title": "Centralized management",
+        "description": "Organize projects, teams and documentation in a single, easy-to-use dashboard."
+      },
+      "certified_security": {
+        "title": "Security and access control",
+        "description": "Roles and permissions so every user only sees what they need."
+      }
+    }
+  },
   "Navigation": {
     "home": "Home",
     "features": "Features",

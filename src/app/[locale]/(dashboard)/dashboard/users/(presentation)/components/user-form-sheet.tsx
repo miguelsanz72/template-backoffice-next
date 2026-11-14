@@ -160,7 +160,7 @@ export function UserFormSheet({ user, isOpen, onClose }: UserFormSheetProps) {
           </SheetHeader>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 py-6">
+            <form noValidate onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 py-6">
               <FormField
                 control={form.control}
                 name="name"
